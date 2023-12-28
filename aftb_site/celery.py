@@ -1,9 +1,10 @@
 import os
 
 from celery import Celery
+from decouple import config
 
 # Set the default Django settings module for the 'celery' program.
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aftb_site.settings')
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", config("DJANGO_SETTINGS_MODULE"))
 
 app = Celery('aftb_site')
 
